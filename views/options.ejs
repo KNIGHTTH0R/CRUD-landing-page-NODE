@@ -1,211 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/html_head') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./index.css">
-
-    <title>Panel de administración Landing Page</title>
-</head>
-
-<body>
-    <ul class="nav nav-inverse justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active" href="/"><i class="fa fa-2x fa-fw fa-home"></i> Volver a la Principal</a>
-        </li>
-        <li class="nav-item">
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
-            <a href="/contact/messages" class="nav-link"><i class="fa fa-2x fa-fw fa-envelope" aria-hidden="true"></i><span class="badge badge-danger"><%= newMessages %></span></a>
-=======
-            <a href="/contact/messages" class="nav-link"><i class="fa fa-2x fa-fw fa-envelope" aria-hidden="true"></i><span class="badge badge-danger"><%= messagesLength %></span></a>
->>>>>>> First commit
-        </li>
-    </ul>
-    <div class="dropdown-divider"></div>
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-12 col-md-6 offset-md-3">
-                <div id="accordion" role="tablist" aria-multiselectable="true">
-                    <div class="card">
-                        <div class="card-header" role="tab" id="profile_header">
-                            <h5 class="mb-0">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+    <body>
+        <ul class="nav nav-inverse justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="/"><i class="fa fa-2x fa-fw fa-home"></i> Volver a la Principal</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contact/messages" class="nav-link"><i class="fa fa-2x fa-fw fa-envelope" aria-hidden="true"></i><span class="badge badge-danger"><%= newMessages %></span></a>
+            </li>
+        </ul>
+        <div class="dropdown-divider"></div>
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-12 col-md-6 offset-md-3">
+                    <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="profile_header">
+                                <h5 class="mb-0">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                            Editar tu información de perfil
                                           </a>
-                            </h5>
-                        </div>
+                                </h5>
+                            </div>
 
-                        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="profile_header">
-                            <div class="card-block">
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
-                                <form id="edit_profile" action="/options/edit/profile" method="POST">
-=======
-                                <form id="edit_profile" action="/options" method="POST">
->>>>>>> First commit
-                                    <div class="form-group">
-                                        <input value="<%= valueTitle %>" class="form-control" type="text" name="title" placeholder="Titulo de la página principal">
+                            <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="profile_header">
+                                <div class="card-block">
+                                    <form id="edit_profile" action="/options/edit/profile" method="POST">
+                                        <div class="form-group">
+                                            <input value="<%= valueTitle %>" class="form-control" type="text" name="title" placeholder="Titulo de la página principal">
 
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="form-control" placeholder="Descripcion de tu perfil" name="description" id="description" cols="30" rows="10"><%= valueDescription %></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" placeholder="Descripcion de tu perfil" name="description" id="description" cols="30" rows="10"><%= valueDescription %></textarea>
 
-                                    </div>
-                                    <div class="form-group">
-                                        <input value="<%= valueUrl %>" class="form-control" type="text" placeholder="Dirección donde esta alojada tu imagen" name="imageUrl">
+                                        </div>
+                                        <div class="form-group">
+                                            <input value="<%= valueUrl %>" class="form-control" type="text" placeholder="Dirección donde esta alojada tu imagen" name="imageUrl">
 
-                                    </div>
-                                    <button type="submit" class="btn btn-secondary">Enviar</button>
-                                </form>
+                                        </div>
+                                        <button type="submit" class="btn btn-secondary">Enviar</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="card">
-                        <div class="card-header" role="tab" id="services">
-                            <h5 class="mb-0">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="services">
+                                <h5 class="mb-0">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                                 Modificar o añadir nuevos servicios a la tabla
                                               </a>
-                            </h5>
-                        </div>
+                                </h5>
+                            </div>
 
-                        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="services">
-                            <div class="card-block">
-                                <div class="container text-right">
-                                    <form action="/options/add/new" method="POST">
-                                        <button type="submit" class="btn btn-success d-inline"><i class="fa fa-2x fa-plus-square" aria-hidden="true"></i></button>
-                                    </form>
+                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="services">
+                                <div class="card-block">
+                                    <div class="container text-right">
+                                        <form action="/options/add/new" method="POST">
+                                            <button type="submit" class="btn btn-success d-inline"><i class="fa fa-2x fa-plus-square" aria-hidden="true"></i></button>
+                                        </form>
 
-                                </div>
-
-                                <% services.forEach(function(service, index) { %>
-                                    <div class="container my-3">
-                                        <div class="row justify-content-center">
-                                            <div class="btn-group" role="group" aria-label="Basic example">
-                                                <form action="/options/delete/<%= index %>" method="POST">
-                                                    <button type="submit" class="btn btn-danger "><i class="fa fa-2x fa-trash" aria-hidden="true"></i></button>
-                                                </form>
-                                            </div>
-                                        </div>
                                     </div>
 
-                                    <form action="/options/<%= index %>" method="POST">
-                                        <div class="form-group">
-                                            <input value="<%= service.nameService %>" class="form-control" type="text" name="serviceTitle" placeholder="Servicio">
-
+                                    <% services.forEach(function(service, index) { %>
+                                        <div class="container my-3">
+                                            <div class="row justify-content-center">
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <form action="/options/delete/<%= index %>" method="POST">
+                                                        <button type="submit" class="btn btn-danger "><i class="fa fa-2x fa-trash" aria-hidden="true"></i></button>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <textarea class="form-control" placeholder="Explica el servicio aqui" name="serviceDescription" cols="30" rows="7"><%= service.description %></textarea>
 
-                                        </div>
-                                        <button type="submit" class="btn btn-secondary">Enviar</button>
-                                    </form>
-                                    <% }); %>
+                                        <form action="/options/<%= index %>" method="POST">
+                                            <div class="form-group">
+                                                <input value="<%= service.nameService %>" class="form-control" type="text" name="serviceTitle" placeholder="Servicio">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" placeholder="Explica el servicio aqui" name="serviceDescription" cols="30" rows="7"><%= service.description %></textarea>
+
+                                            </div>
+                                            <button type="submit" class="btn btn-secondary">Enviar</button>
+                                        </form>
+                                        <% }); %>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="card">
-                        <div class="card-header" role="tab" id="benefits">
-                            <h5 class="mb-0">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="benefits">
+                                <h5 class="mb-0">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                                    Añadir nuevos elementos en la sección "Beneficios" 
                                                   </a>
-                            </h5>
+                                </h5>
+                            </div>
+
+                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="services">
+                                <div class="card-block">
+                                    <div class="container text-right">
+                                        <form action="/options/addbenefit/new" method="POST">
+                                            <button type="submit" class="btn btn-success d-inline"><i class="fa fa-2x fa-plus-square" aria-hidden="true"></i></button>
+                                        </form>
+
+                                    </div>
+
+                                    <% benefits.forEach(function(benefit, index) { %>
+                                        <div class="container my-3">
+                                            <div class="row justify-content-center">
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <form action="/options/remove/<%= index %>" method="POST">
+                                                        <button type="submit" class="btn btn-danger"><i class="fa fa-2x fa-trash" aria-hidden="true"></i></button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <form action="/options/benefit/<%= index %>" method="POST">
+                                            <div class="form-group">
+                                                <input value="<%= benefit.title %>" class="form-control" type="text" name="benefitTitle" placeholder="Titulo del beneficio">
+                                            </div>
+                                            <div class="form-group">
+                                                <input value="<%= benefit.imageURL %>" class="form-control" placeholder="la URL de tu imagen aqui" name="benefitURL">
+
+                                            </div>
+                                            <button type="submit" class="btn btn-secondary">Enviar</button>
+                                        </form>
+                                        <% }); %>
+                                </div>
+                            </div>
                         </div>
 
-                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="services">
-                            <div class="card-block">
-                                <div class="container text-right">
-                                    <form action="/options/addbenefit/new" method="POST">
-                                        <button type="submit" class="btn btn-success d-inline"><i class="fa fa-2x fa-plus-square" aria-hidden="true"></i></button>
-                                    </form>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="benefits">
+                                <h5 class="mb-0">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                                       Cambiar datos de contacto 
+                                        </a>
+                                </h5>
+                            </div>
 
-                                </div>
+                            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="services">
+                                <div class="card-block">
 
-                                <% benefits.forEach(function(benefit, index) { %>
                                     <div class="container my-3">
                                         <div class="row justify-content-center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <form action="/options/remove/<%= index %>" method="POST">
-                                                    <button type="submit" class="btn btn-danger"><i class="fa fa-2x fa-trash" aria-hidden="true"></i></button>
+                                                <form action="/options/contact_info/update/" method="POST">
+                                                    <div class="input-group">
+                                                        <span id="email_contact" class="input-group-addon"><i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                                                    </span>
+                                                        <input value="<%= contactData.email %>" id="contact-email" type="text" class="form-control" name="contact_email" aria-describedby="email_contact">
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <span id="phone_contact" class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i>
+                                                        </span>
+                                                        <input value="<%= contactData.phone %>" id="contact-phone" type="text" class="form-control" name="contact_phone" aria-describedby="phone_contact">
+                                                    </div>
+                                                    <div class="text-right mt-2 px-2">
+                                                        <button class="btn btn-secondary">Cambiar</button>
+                                                    </div>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <form action="/options/benefit/<%= index %>" method="POST">
-                                        <div class="form-group">
-                                            <input value="<%= benefit.title %>" class="form-control" type="text" name="benefitTitle" placeholder="Titulo del beneficio">
-                                        </div>
-                                        <div class="form-group">
-                                            <input value="<%= benefit.imageURL %>" class="form-control" placeholder="la URL de tu imagen aqui" name="benefitURL">
 
-                                        </div>
-                                        <button type="submit" class="btn btn-secondary">Enviar</button>
-                                    </form>
-                                    <% }); %>
-                            </div>
-                        </div>
-                    </div>
-
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
-                    <div class="card">
-                        <div class="card-header" role="tab" id="benefits">
-                            <h5 class="mb-0">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                                       Cambiar datos de contacto 
-                                        </a>
-                            </h5>
-                        </div>
-
-                        <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="services">
-                            <div class="card-block">
-
-                                <div class="container my-3">
-                                    <div class="row justify-content-center">
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <form action="/options/contact_info/update/" method="POST">
-                                                <div class="input-group">
-                                                    <span id="email_contact" class="input-group-addon"><i class="fa fa-envelope-open-o" aria-hidden="true"></i>
-                                                    </span>
-                                                    <input value="<%= contactData.email %>" id="contact-email" type="text" class="form-control" name="contact_email" aria-describedby="email_contact">
-                                                </div>
-                                                <div class="input-group">
-                                                    <span id="phone_contact" class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i>
-                                                        </span>
-                                                    <input value="<%= contactData.phone %>" id="contact-phone" type="text" class="form-control" name="contact_phone" aria-describedby="phone_contact">
-                                                </div>
-                                                <div class="text-right mt-2 px-2">
-                                                    <button class="btn btn-secondary">Cambiar</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
-=======
->>>>>>> First commit
                 </div>
             </div>
         </div>
-    </div>
 
+        <%- include('partials/footer_scripts') %>
+    </body>
 
-
-
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
-</body>
-
-</html>
+    </html>

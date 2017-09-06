@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
-    <link rel="stylesheet" href="../../message.css">
-=======
-    <link rel="stylesheet" href="./message.css">
->>>>>>> First commit
-
-    <title>Mensajes recibidos</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Oxygen" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        p {
+            color: black;
+        }
+    </style>
+    <title>Miriam Rico - Adiestramiento canino</title>
 </head>
+
 
 <body>
     <div class="container mt-5">
         <div class="row">
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
             <div class="col 12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                 <ul class="nav nav-inverse justify-content-center">
                     <li class="nav-item">
@@ -46,35 +46,11 @@
                                 <form action="/contact/remove/<%= index %>" method="POST" class="ml-4 hidden-sm-up">
                                     <button type="submit" class="btn btn-danger "><i class="fa fa-fw fa-trash" aria-hidden="true"></i></button>
                                 </form>
-=======
-            <div class="col 12 col-md-6 offset-md-3">
-                <ul class="nav nav-inverse justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/options"><i class="fa fa-2x fa-fw fa-cogs" aria-hidden="true"></i> Volver al panel de administracion</a>
-                    </li>
-
-                </ul>
-                <div class="dropdown-divider"></div>
-                <% contactMessages.forEach( function(message, index) { %>
-                    <div class="card-block">
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-success">
-                                <strong>Received from:</strong>
-                                <span class="ml-3 font-italic"><%= message.email %></span>
-                                <form action="/contact/remove/<%= index %>" method="POST" class="ml-4">
-                                    <button type="submit" class="btn btn-danger "><i class="fa fa-fw fa-trash" aria-hidden="true"></i></button>
-
-                                </form>
-                            </li>
-                            <li class="list-group-item list-group-item-warning">
-                                <strong>At: </strong> <span class="ml-3"><%= message.createdAt.toDateString() %></span>
->>>>>>> First commit
 
                             </li>
                         </ul>
                         <div class="card">
                             <div class="card-block">
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
                                 <p class="font-weight text-justify">
                                     <%= message.message %>
                                 </p>
@@ -87,11 +63,6 @@
 
                                 </div>
 
-=======
-                                <p class="lead">
-                                    <%= message.message %>
-                                </p>
->>>>>>> First commit
                             </div>
                         </div>
                     </div>
@@ -101,15 +72,12 @@
             </div>
         </div>
     </div>
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
     <script>
         $('div.card').on('click', 'button.btn-sm', function() {
             $(this).removeClass('btn-warning').addClass('btn-success disabled');
         })
     </script>
-=======
->>>>>>> First commit
 </body>
 
 </html>

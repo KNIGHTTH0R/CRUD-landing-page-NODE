@@ -28,7 +28,7 @@ gulp.task('sass', (errorHandler) => {
 
 gulp.task('models', (errorHandler) => {
     pump([
-        gulp.src(path.join(__dirname, '/models/*.js')),
+        gulp.src(path.join(__dirname, './models/*.js')),
         babel({
             "presets": [
                 [
@@ -50,7 +50,7 @@ gulp.task('models', (errorHandler) => {
 
 gulp.task('routes', (errorHandler) => {
     pump([
-        gulp.src(path.join(__dirname, '/routes/*.js')),
+        gulp.src(path.join(__dirname, './routes/*.js')),
         babel({
             "presets": [
                 [
@@ -91,3 +91,5 @@ gulp.task('server_file', (errorHandler) => {
     ], errorHandler)
 
 })
+
+gulp.task('default', ['sass', 'models', 'routes', 'server_file']);
