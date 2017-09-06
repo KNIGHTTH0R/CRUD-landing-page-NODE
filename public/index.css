@@ -1,0 +1,133 @@
+body,
+button {
+    font-family: Dosis, Georgia, serif
+}
+
+a,
+a.phone-number {
+    text-decoration: none
+}
+
+-nav-item,
+.nav a {
+    transition: .4s ease all
+}
+
+body {
+    background: #4c4c4c;
+    background: -moz-linear-gradient(top, rgba(76, 76, 76, 1) 0, rgba(102, 102, 102, 1) 9%, rgba(102, 102, 102, 1) 9%, rgba(89, 89, 89, 1) 16%, rgba(71, 71, 71, 1) 20%, rgba(0, 0, 0, 1) 37%, rgba(0, 0, 0, 1) 37%, rgba(17, 17, 17, 1) 60%, rgba(44, 44, 44, 1) 69%, rgba(44, 44, 44, 1) 69%, rgba(43, 43, 43, 1) 76%, rgba(28, 28, 28, 1) 94%, rgba(19, 19, 19, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(76, 76, 76, 1) 0, rgba(102, 102, 102, 1) 9%, rgba(102, 102, 102, 1) 9%, rgba(89, 89, 89, 1) 16%, rgba(71, 71, 71, 1) 20%, rgba(0, 0, 0, 1) 37%, rgba(0, 0, 0, 1) 37%, rgba(17, 17, 17, 1) 60%, rgba(44, 44, 44, 1) 69%, rgba(44, 44, 44, 1) 69%, rgba(43, 43, 43, 1) 76%, rgba(28, 28, 28, 1) 94%, rgba(19, 19, 19, 1) 100%);
+    background: linear-gradient(to bottom, rgba(76, 76, 76, 1) 0, rgba(102, 102, 102, 1) 9%, rgba(102, 102, 102, 1) 9%, rgba(89, 89, 89, 1) 16%, rgba(71, 71, 71, 1) 20%, rgba(0, 0, 0, 1) 37%, rgba(0, 0, 0, 1) 37%, rgba(17, 17, 17, 1) 60%, rgba(44, 44, 44, 1) 69%, rgba(44, 44, 44, 1) 69%, rgba(43, 43, 43, 1) 76%, rgba(28, 28, 28, 1) 94%, rgba(19, 19, 19, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0);
+    background-attachment: fixed;
+    color: #fff
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+a.phone-number {
+    font-size: 18px
+}
+
+.nav a {
+    color: #adff2f
+}
+
+.nav a i.fa-envelope {
+    color: #ff0
+}
+
+.nav-item:hover {
+    -webkit-box-shadow: 7px 10px 5px 0 rgba(0, 0, 0, .75);
+    -moz-box-shadow: 7px 10px 5px 0 rgba(0, 0, 0, .75);
+    box-shadow: 7px 10px 5px 0 rgba(0, 0, 0, .75)
+}
+
+header.main-header {
+    padding: 1em;
+    border-bottom: 1px solid #ffa84c
+}
+
+section.main-profile {
+    padding: 1em
+}
+
+.profile-text {
+    font-size: 18px;
+    padding: .3em;
+    margin: .5em 0
+}
+
+.modal {
+    color: #000
+}
+
+.modal-content {
+    background-color: #000;
+    color: #ffa84c;
+    border: 1px solid #fff
+}
+
+.modal .close {
+    font-size: 30px;
+    font-weight: 700;
+    color: red!important
+}
+
+.nav-tabs a,
+table th {
+    font-size: 22px
+}
+
+.feature i {
+    margin: .5em
+}
+
+.features-zone {
+    padding: .5em
+}
+
+.feature p {
+    font-family: Oxygen, Verdana, serif
+}
+
+div.list-wrapper {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    padding: 1em
+}
+
+a.email,
+div.list-wrapper h3,
+div.list-wrapper li {
+    padding: .5em
+}
+
+table {
+    margin: 2em 0
+}
+
+i.fa-whatsapp {
+    color: #4dc247
+}
+
+a.email {
+    font-size: 18px;
+    color: #ffa84c;
+    font-weight: 700;
+    line-height: 1.5em;
+    margin: 1em
+}
+
+div.contact {
+    margin-top: 20%
+}
+
+label {
+    color: black
+}

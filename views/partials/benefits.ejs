@@ -1,0 +1,14 @@
+<div class="tab-pane fade" id="benefits" role="tabpanel">
+    <div class="list-wrapper">
+        <ul class="text-center">
+            <% benefits.forEach((benefit) => { %>
+                <li>
+                    <h3 class="font-italic">
+                        <%= benefit.title %>
+                    </h3>
+                    <img src="<%= benefit.imageURL %>" alt="perro_no_estres" class="img-fluid img-thumbnail">
+                </li>
+                <% }); %>
+        </ul>
+    </div>
+</div>
