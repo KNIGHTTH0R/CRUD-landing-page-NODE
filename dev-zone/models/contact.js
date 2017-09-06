@@ -7,13 +7,9 @@ const ContactSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
     },
     unreaded: { type: Boolean, default: true },
     classReaded: { type: String, default: "" }
-=======
-    }
->>>>>>> First commit
 });
 
 

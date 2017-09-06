@@ -6,6 +6,7 @@ body {
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0);
     background-attachment: fixed;
     font-family: Dosis, Georgia, serif;
+<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
 }
 
 .readed {
@@ -16,4 +17,6 @@ body {
 
 .readed:hover {
     opacity: 1;
+=======
+>>>>>>> First commit
 }

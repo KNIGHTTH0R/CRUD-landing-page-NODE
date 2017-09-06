@@ -1,0 +1,75 @@
+<%- include('partials/html_head') %>
+
+    <body>
+        <%- include('partials/header', {title: title,
+         imageURL: url,
+     description: description,
+    contactData: contactData}); %>
+
+            <div class="dropdown-divider hidden-sm-up my-3"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs justify-content-center">
+                            <li class="nav-item">
+                                <a role="tab" class="nav-link" data-toggle="tab" href="#home">¿Qué es educar?</a>
+                            </li>
+                            <li class="nav-item">
+                                <a role="tab" class="nav-link" data-toggle="tab" href="#benefits">Beneficios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a role="tab" class="nav-link" data-toggle="tab" href="#services">Servicios</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade active" id="home" role="tabpanel">
+                                <div class="row align-items-start  features-zone">
+                                    <div class="col-12 col-md-4 feature">
+                                        <div class="text-center">
+                                            <i class="fa fa-2x fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
+                                            <h3 class="text-warning">¿Adiestrar es maltratar?</h3>
+                                        </div>
+
+                                        <p class="text-justify">
+                                            Para nada, el proceso de adiestramiento <strong class="text-warning">SOLO SE TRATA DE DISCIPLINA</strong> y la forma mas consistente de realizarlo en tu mascota es con <span class="font-italic">amor, perseverancia y cariño</span>.
+                                        </p>
+
+                                    </div>
+                                    <div class="col-12 col-md-4 feature">
+                                        <div class="text-center">
+                                            <i class="fa fa-2x fa-fw fa-universal-access" aria-hidden="true"></i>
+                                            <h3 class="text-warning">¿Todas son aptas?</h3>
+                                        </div>
+
+                                        <p class="text-justify">
+                                            El proceso se puede aplicar <span class="text-warning font-weight-bold">A CUALQUIER MASCOTA</span>. Todas pueden entender que ellas no mandan y que hay ciertas órdenes que deben obedecer.
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-md-4 feature">
+                                        <div class="text-center">
+                                            <i class="fa fa-2x fa-fw fa-eur" aria-hidden="true"></i>
+                                            <h3 class="text-warning">¿Cuanto cuesta?</h3>
+                                        </div>
+
+                                        <p class="text-justify">
+                                            Hasta noviembre de este año 2017 mis servicios son <strong class="text-warning">GRATUITOS</strong>, solo contacta conmigo para concertar una cita con tu mascota y explicarte el proceso en persona.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <%- include('partials/benefits', {benefits: benefits}) %>
+
+                                <%- include('partials/services', {services: services}) %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+
+            </footer>
+            <%- include('partials/footer_scripts') %>
+    </body>
+
+    </html>

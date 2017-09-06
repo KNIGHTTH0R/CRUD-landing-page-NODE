@@ -1,84 +1,44 @@
-const router = require('express').Router();
+const router = require('express').Router(),
+    bcrypt = require('bcryptjs'),
+    passport = require('passport');
+
 const Profile = require('../models/profile'),
     Services = require('../models/services'),
     Benefit = require('../models/benefit'),
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
     Contact = require('../models/contact'),
+    User = require('../models/user'),
     ContactData = require('../models/contact_data');
-=======
-    Contact = require('../models/contact');
->>>>>>> First commit
 
 let servicesData = [],
-    benefitsData = [],
-    contactMessages = [];
-
-router.get('/', (request, response) => {
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
-=======
-
->>>>>>> First commit
-    let profileData = {};
-
-    Profile.findById("59abc4c29f6c941060343599", (error, profile) => {
-        if (error) throw new Error(error);
-    }).then(profile => {
-
-        profileData = profile;
-
-    }).then(data => {
-
-        Services.find({}, (error, services) => {
-            if (error) throw new Error(error)
-        }).then(services => {
-
-            servicesData = services;
-
-        }).then((final) => {
-            Benefit.find({}, (error, benefits) => {
-                if (error) throw new Error(error);
-            }).then(benefits => {
-                benefitsData = benefits;
-
-            }).then(benefits => {
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
-                ContactData.findById('59aeee169b9dcf1ac06b4e3f', (error, contactData) => {
-                    if (error) throw new Error(error);
-                    response.render('index', {
-                        title: profileData.title,
-                        url: profileData.imageURL,
-                        description: profileData.description,
-                        services: servicesData,
-                        benefits: benefitsData,
-                        contactData: contactData,
-                    });
-                })
-
-            })
-        })
-
-    });
-});
-
-=======
-                response.render('index', {
-                    title: profileData.title,
-                    url: profileData.imageURL,
-                    description: profileData.description,
-                    services: servicesData,
-                    benefits: benefitsData,
-                });
-            })
-        })
-
-    });
-});
+    benefitsData = [];
 
 
-router.get('/options', (request, response) => {
+function loggedIn(req, res, next) {
+    if (req.user) {
+        next();
+    } else {
+        res.redirect('/login');
+    }
+}
+router.get('/login', (request, response) => {
+    if (request.user) {
+        response.redirect('/options')
+    } else {
+        response.render('login');
+    }
+})
+
+router.post('/login',
+    passport.authenticate('local', {
+        successRedirect: '/options',
+        failureRedirect: '/login',
+        failureFlash: false
+    })
+);
+router.get('/options', loggedIn, (request, response) => {
     let profileData = {},
-        messageLength = 0;;
-
+        messageLength = 0,
+        newMessages = 0;
 
     Profile.findById("59abc4c29f6c941060343599", (error, profile) => {
         if (error) throw new Error(error);
@@ -104,23 +64,32 @@ router.get('/options', (request, response) => {
                     if (error) throw new Error(error);
                 }).then(messages => {
                     messageLength = messages.length;
-                    contactMessages = messages;
-                    response.render('options', {
-                        valueTitle: profileData.title,
-                        valueUrl: profileData.imageURL,
-                        valueDescription: profileData.description,
-                        services: servicesData,
-                        benefits: benefitsData,
-                        messagesLength: messageLength
-                    });
+                    for (let i = 0; i < messageLength; i++) {
+                        if (messages[i].unreaded) {
+                            newMessages++;
+                        }
+                    }
+                }).then((data) => {
+                    ContactData.findById('59aeee169b9dcf1ac06b4e3f', (error, contactData) => {
+                        if (error) throw new Error(error);
+                    }).then((contactData) => {
+                        response.render('options', {
+                            valueTitle: profileData.title,
+                            valueUrl: profileData.imageURL,
+                            valueDescription: profileData.description,
+                            services: servicesData,
+                            benefits: benefitsData,
+                            newMessages: newMessages,
+                            contactData: contactData,
+                        });
+                    })
                 });
             })
         })
     })
 })
 
-
-router.post('/options', (request, response) => {
+router.post('/options/edit/profile', (request, response) => {
     let dataUpdateProfile = {};
     if (request.body.title) dataUpdateProfile.title = request.body.title.toUpperCase();
     if (request.body.imageUrl) dataUpdateProfile.imageURL = request.body.imageUrl;
@@ -206,42 +175,19 @@ router.post('/options/remove/:index', (request, response) => {
         })
 })
 
-router.get('/contact/messages', (request, response) => {
-    Contact.find({}, (error, messages) => {
+router.post('/options/contact_info/update', (request, response) => {
+    let contactDataUpdate = {};
+
+    if (request.body.contact_email) contactDataUpdate.email = request.body.contact_email;
+    if (request.body.contact_phone) contactDataUpdate.phone = request.body.contact_phone;
+
+    ContactData.findByIdAndUpdate("59aeee169b9dcf1ac06b4e3f", {
+        $set: contactDataUpdate
+    }, { new: true }, (error, doc) => {
         if (error) throw new Error(error);
-    }).then(messages => {
-        response.render('messages', { contactMessages: messages });
-    });
-});
-
-router.get('/contact', (request, response) => {
-    response.render('contact');
-})
-
-
-router.post('/contact', (request, response) => {
-    let contactMessage = new Contact();
-    contactMessage.email = request.body.emailFromUser;
-    contactMessage.message = request.body.emailMessage;
-
-    contactMessage.save((error, contact) => {
-        if (error) throw new Error(error);
-        console.log(`CONTACT MESSAGE RECEIVED: ${JSON.stringify(contact, undefined, 2)}`)
-        response.redirect('/contact')
+        console.log(`DOCUMENT UPDATED WITH SUCCESS: ${JSON.stringify(doc, undefined, 2)}`)
+        response.redirect('/options');
     })
 })
-
-
-router.post('/contact/remove/:index', (request, response) => {
-    Contact.findOneAndRemove({ email: contactMessages[request.params.index].email },
-        (error, doc) => {
-            if (error) throw new Error(error);
-            console.log(`EMAIL MESSAGE DELETED WITH SUCCESS: ${JSON.stringify(doc, undefined, 2)}`)
-            response.redirect('/contact/messages');
-        })
-})
-
->>>>>>> First commit
-
 
 module.exports = router;

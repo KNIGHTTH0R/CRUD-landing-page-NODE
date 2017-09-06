@@ -4,16 +4,12 @@
   "description": "adiestramiento canino",
   "main": "server.js",
   "scripts": {
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
     "start": "node server.js",
-=======
->>>>>>> First commit
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "D.Romero <romerodeveloper@techie.com> (https://javascrupt.com)",
   "license": "MIT",
   "dependencies": {
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
     "connect-mongo": "^1.3.2",
@@ -28,15 +24,17 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-=======
-    "ejs": "^2.5.7",
-    "ejs-mate": "^2.3.0",
-    "express": "^4.15.4",
-    "mongoose": "^4.11.9"
-  },
-  "devDependencies": {
-    "body-parser": "^1.17.2",
->>>>>>> First commit
-    "nodemon": "^1.11.0"
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "nodemon": "^1.11.0",
+    "pump": "^1.0.2"
   }
 }

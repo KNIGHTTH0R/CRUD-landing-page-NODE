@@ -1,18 +1,14 @@
 const express = require('express'),
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
     session = require('express-session'),
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     cookieParser = require('cookie-parser'),
-=======
->>>>>>> First commit
     router = express.Router(),
     bodyParser = require('body-parser'),
     path = require('path');
 
 const ejs = require('ejs');
 
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
 require('dotenv').config();
 
 const mongoose = require('mongoose'),
@@ -64,24 +60,11 @@ const mongoose = require('mongoose'),
         app.use(passport.initialize());
         app.use(passport.session());
 
-=======
-const { database } = require('./config/database'),
-    mongoose = require('mongoose'),
-    connect_db = mongoose.connect(database).then(() => {
-        console.log("CONNECTED SUCCESFULLY TO THE DATABASE");
-
-        const app = express(),
-            port = process.env.PORT || 3030;
-
-        app.use(express.static(path.join(__dirname, 'public')));
-
->>>>>>> First commit
         app.set('view engine', 'ejs');
 
         app.use(bodyParser.urlencoded({ extended: true }));
         app.use(bodyParser.json());
 
-<<<<<<< 55da757d912e0737902a8791ef91e5d37479124e
         const mainRoute = require('./routes/home'),
             optionsRoute = require('./routes/options'),
             contactRoute = require('./routes/contact');
@@ -90,11 +73,6 @@ const { database } = require('./config/database'),
         app.use(optionsRoute);
         app.use(contactRoute);
 
-=======
-        const mainRoute = require('./routes/home');
-
-        app.use(mainRoute);
->>>>>>> First commit
 
         app.listen(port, () => {
             console.log(`Server listening on port ${port}`);
